@@ -1,0 +1,9 @@
+<h1>View All Contacts</h1>
+@foreach (var contact in Model)
+{
+    <ul>
+        <h3>@contact.GetName()</h3>
+        <h4>Phone Number: @contact.GetPhoneNumber()</h4>
+        <h4>Address: @contact.GetAddress()</h4>
+    </ul>
+}
