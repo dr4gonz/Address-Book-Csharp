@@ -7,17 +7,21 @@
         <link rel="stylesheet" href="Content/css/styles.css" type="text/css">
     </head>
     <body>
-        <h1>View All Contacts</h1>
-        @foreach (var contact in Model)
-        {
-            <ul>
-                <h3>@contact.GetName()</h3>
-                <h4>Phone Number: @contact.GetPhoneNumber()</h4>
-                <h4>Address: @contact.GetAddress()</h4>
-                <h4>City, State, Zip: @contact.GetCity(), @contact.GetState(), @contact.GetZip()</h4>
-            </ul>
-        }
-        <h3><a href="/add_contact">Add a new contact</a></h3>
-        <h3><a href="/all_contacts">View all contacts</a></h3>
+        <div class="col-md-6 col-md-offset-2">
+            <h1>View All Contacts</h1>
+            @foreach (var contact in Model)
+            {
+                <ul>
+                    <h3>@contact.GetName()</h3>
+                    <h4>Phone Number: @contact.GetPhoneNumber()</h4>
+                    <h4>Address: @contact.GetAddress()</h4>
+                    <h4>City, State, Zip: @contact.GetCity(), @contact.GetState(), @contact.GetZip()</h4>
+                </ul>
+            }
+            <h3><a href="/add_contact">Add a new contact</a></h3>
+            <form action="/deleted_contacts" method="post">
+                <button type="submit" method="post" class="btn btn-danger">Delete All Contacts</button>
+            </form>
+        </div>
     </body>
 </html>

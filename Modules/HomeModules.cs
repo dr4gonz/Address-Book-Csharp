@@ -19,6 +19,10 @@ namespace AddressBook
       Get["/add_contact"] = _ => {
           return View["add_contact.cshtml"];
       };
+      Post["/deleted_contacts"] = _ => {
+          Contact.ClearAll();
+          return View["deleted_contacts.cshtml"];
+      };
       Post["/add_contact"] = _ => {
           Contact newContact = new Contact(Request.Form["contact-name"], Request.Form["contact-phone"], Request.Form["contact-address"], Request.Form["contact-city"], Request.Form["contact-state"], Request.Form["contact-zip"]);
           return View["created_contact.cshtml", newContact];
