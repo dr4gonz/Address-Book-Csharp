@@ -1,23 +1,23 @@
 using System.Collections.Generic;
 
-namespace Contact.Objects
+namespace AddressBook.Objects
 {
     public class Contact
     {
         private string _name;
         private string _address;
         private string _phoneNumber;
-        private static List<Contact> _allContacts = new List<Contact>{};
+        private static List<Contact> _allContacts = new List<Contact> {};
 
-        public Contact (string name, string address, string PhoneNumber)
+        public Contact(string Name, string PhoneNumber, string Address)
         {
-            _name = name;
-            _address = address;
+            _name = Name;
+            _address = Address;
             _phoneNumber = PhoneNumber;
             _allContacts.Add(this);
         }
 
-        public static string GetName()
+        public string GetName()
         {
             return _name;
         }
@@ -25,7 +25,7 @@ namespace Contact.Objects
         {
             _name = NewName;
         }
-        public static string GetAddress()
+        public string GetAddress()
         {
             return _address;
         }
@@ -33,7 +33,7 @@ namespace Contact.Objects
         {
             _address = NewAddress;
         }
-        public static string GetPhoneNumber()
+        public string GetPhoneNumber()
         {
             return _phoneNumber;
         }
