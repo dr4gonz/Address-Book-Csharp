@@ -20,7 +20,7 @@ namespace AddressBook
           return View["add_contact.cshtml"];
       };
       Post["/add_contact"] = _ => {
-          Contact newContact = new Contact(Request.Form["contact-name"], Request.Form["contact-phone"], Request.Form["contact-address"]);
+          Contact newContact = new Contact(Request.Form["contact-name"], Request.Form["contact-phone"], Request.Form["contact-address"], Request.Form["contact-city"], Request.Form["contact-state"], Request.Form["contact-zip"]);
           return View["created_contact.cshtml", newContact];
       };
     }
