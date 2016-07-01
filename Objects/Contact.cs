@@ -67,7 +67,7 @@ namespace AddressBook.Objects
         {
             return _zip;
         }
-        public void SetZip(string NewZip)
+        public void SetZip(int NewZip)
         {
             _zip = NewZip;
         }
